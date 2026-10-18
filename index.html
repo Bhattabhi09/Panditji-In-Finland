@@ -120,9 +120,18 @@
                 सभी प्रकार के धार्मिक अनुष्ठान एवं पूजा पाठ के लिए संपर्क करें
             </p>
 
-            <a href="tel:+358456965020" class="inline-flex items-center justify-center bg-trad-gold text-trad-maroon hover:bg-yellow-300 font-bold text-2xl sm:text-4xl py-3 px-8 rounded-full shadow-[0_0_20px_rgba(251,191,36,0.6)] transition duration-300 transform hover:scale-105 font-sans pulse-call border-4 border-yellow-200">
-                <i class="fas fa-phone-alt mr-4"></i> +358 45 6965020
-            </a>
+            <!-- Hero Buttons -->
+            <div class="flex flex-col sm:flex-row items-center gap-4 w-full justify-center">
+                <!-- Call Button -->
+                <a href="tel:+358456965020" class="inline-flex items-center justify-center bg-trad-gold text-trad-maroon hover:bg-yellow-300 font-bold text-2xl sm:text-4xl py-3 px-8 rounded-full shadow-[0_0_20px_rgba(251,191,36,0.6)] transition duration-300 transform hover:scale-105 font-sans pulse-call border-4 border-yellow-200 w-full sm:w-auto">
+                    <i class="fas fa-phone-alt mr-4"></i> +358 45 6965020
+                </a>
+                
+                <!-- View Services Button (Scroll Down) -->
+                <button onclick="document.getElementById('services-grid').scrollIntoView({behavior: 'smooth', block: 'start'})" class="inline-flex items-center justify-center bg-black/40 border-2 border-trad-gold text-trad-gold hover:bg-trad-gold hover:text-trad-maroon font-bold text-lg sm:text-2xl py-3 px-8 rounded-full transition duration-300 backdrop-blur-sm w-full sm:w-auto">
+                    <span data-i18n="viewServices">सेवाएं देखें</span> <i class="fas fa-arrow-down ml-2 text-sm"></i>
+                </button>
+            </div>
 
             <!-- Location & Language Switcher Bar -->
             <div class="mt-8 flex flex-wrap justify-center items-center gap-3 sm:gap-6 w-full max-w-lg mx-auto">
@@ -132,12 +141,18 @@
                     <span data-i18n="location">हेलसिंकी, फिनलैंड (Helsinki)</span>
                 </div>
             </div>
+
+            <!-- Scroll Down Indicator -->
+            <div class="mt-8 sm:mt-12 flex flex-col items-center justify-center text-trad-gold-light animate-bounce cursor-pointer hover:text-white transition-colors" onclick="document.getElementById('about-section').scrollIntoView({behavior: 'smooth'})">
+                <span class="text-xs sm:text-sm mb-1 font-medium tracking-wide drop-shadow-md" data-i18n="scrollDown">नीचे स्क्रॉल करें</span>
+                <i class="fas fa-chevron-down text-2xl drop-shadow-md"></i>
+            </div>
             
         </div>
     </header>
 
     <!-- About Section (Accordion) -->
-    <section class="py-8 px-4 max-w-3xl mx-auto -mt-6 relative z-20">
+    <section id="about-section" class="py-8 px-4 max-w-3xl mx-auto -mt-6 relative z-20">
         <div class="bg-white rounded-2xl shadow-xl border border-trad-gold/50 overflow-hidden">
             
             <button onclick="toggleAbout()" class="w-full bg-orange-50 hover:bg-orange-100 px-6 py-4 flex justify-between items-center focus:outline-none transition-colors border-b border-trad-gold/30">
@@ -191,7 +206,7 @@
         </div>
 
         <!-- Dynamic Services Grid -->
-        <div id="services-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div id="services-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 pt-4">
             <!-- Injected via JavaScript -->
         </div>
     </section>
@@ -327,7 +342,9 @@
                 samagriTitle: "पूजा सामग्री (आवश्यक वस्तुएं)",
                 samagriNote: "* नोट: कुछ विशिष्ट सामग्री पूजा के प्रकार के अनुसार बदल सकती है। कृपया पंडित जी से संपर्क कर पुष्टि करें।",
                 closeBtn: "बंद करें",
-                langBtn: "English"
+                langBtn: "English",
+                scrollDown: "नीचे स्क्रॉल करें",
+                viewServices: "सेवाएं देखें"
             },
             en: {
                 topLeft: "॥ Jai Bhairav Devta ॥",
@@ -355,7 +372,9 @@
                 samagriTitle: "Pooja Samagri (Required Items)",
                 samagriNote: "* Note: Specific items may vary depending on the pooja. Please confirm with Pandit Ji.",
                 closeBtn: "Close",
-                langBtn: "हिंदी"
+                langBtn: "हिंदी",
+                scrollDown: "Scroll Down",
+                viewServices: "View Services"
             }
         };
 
