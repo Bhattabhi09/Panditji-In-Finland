@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>पंडित जी राम चंद्र भट्ट - Hindu Priest in Helsinki</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'trad-red': '#b91c1c',     
+                        'trad-maroon': '#7f1d1d',  
+                        'trad-gold': '#fbbf24',    
+                        'trad-gold-light': '#fde68a', 
+                        'trad-cream': '#fffbeb',   
+                        'trad-orange': '#ea580c'   
+                    },
+                    fontFamily: {
+                        'hindi': ['"Tiro Devanagari Hindi"', 'serif'],
+                        'sans': ['Poppins', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(to bottom, rgba(127, 29, 29, 0.9), rgba(185, 28, 28, 0.85)), url('https://placehold.co/1920x1080/450a0a/450a0a?text=+')",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #fffbeb;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23fcd34d' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            scroll-behavior: smooth;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(to bottom, #fde047, #d97706);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .border-ornate {
+            border: 4px double #d97706;
+            position: relative;
+        }
+        .border-ornate::before, .border-ornate::after {
+            content: '❖';
+            position: absolute;
+            color: #d97706;
+            font-size: 1.5rem;
+        }
+        .border-ornate::before { top: -12px; left: -12px; background: #fffbeb; padding: 2px; }
+        .border-ornate::after { bottom: -12px; right: -12px; background: #fffbeb; padding: 2px; }
+        
+        .pulse-call {
+            animation: pulse-ring 2s infinite;
+        }
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(251, 191, 36, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0); }
+        }
+
+        /* Modal Transitions */
+        .modal-active { display: flex !important; }
+        .modal-backdrop {
+            backdrop-filter: blur(4px);
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+    </style>
+</head>
+<body class="font-hindi text-gray-800 antialiased overflow-x-hidden pb-20 md:pb-0" id="app-body">
+
+    <!-- Top Bar -->
+    <div class="bg-trad-maroon text-trad-gold py-2 px-2 sm:px-6 shadow-md z-40 relative flex flex-col items-center justify-center min-h-[60px] sm:min-h-[70px]">
+        <div class="w-full flex justify-between text-[11px] sm:text-sm md:text-base font-bold absolute top-2 sm:top-1/2 sm:-translate-y-1/2 left-0 right-0 px-3 sm:px-6 pointer-events-none text-yellow-300">
+            <span data-i18n="topLeft">॥ जय भैरव देवता ॥</span>
+            <span data-i18n="topRight">॥ जय माता दी ॥</span>
+        </div>
+        
+        <div class="text-center mt-4 sm:mt-0 relative z-10 w-full px-4">
+            <p class="text-sm sm:text-lg font-bold mb-1" data-i18n="ganesh">॥ श्री गणेशाय नमः ॥</p>
+            <p class="text-[10px] sm:text-xs md:text-sm font-medium italic opacity-90 leading-tight" data-i18n="shloka">
+                वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।<br class="sm:hidden"> 
+                निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥
+            </p>
+        </div>
+    </div>
+
+    <!-- Header / Hero Section -->
+    <header class="bg-hero-pattern bg-cover bg-center text-center py-10 sm:py-16 px-4 relative shadow-2xl border-b-8 border-trad-gold">
+        <div class="absolute top-4 left-4 text-trad-gold opacity-50 text-3xl sm:text-5xl">❁</div>
+        <div class="absolute top-4 right-4 text-trad-gold opacity-50 text-3xl sm:text-5xl hidden sm:block">❁</div>
+
+        <div class="max-w-4xl mx-auto relative z-10 flex flex-col items-center">
+            
+            <h1 class="text-5xl sm:text-7xl font-bold text-white mb-2 tracking-wide drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] mt-2">
+                <span class="gold-gradient-text" data-i18n="titleTitle">पंडित जी</span><br>
+                <span data-i18n="titleName" class="font-sans font-bold">राम चंद्र भट्ट</span>
+            </h1>
+            
+            <div class="flex items-center justify-center my-5">
+                <div class="h-1 w-12 bg-trad-gold rounded"></div>
+                <i class="fas fa-om text-trad-gold mx-4 text-2xl"></i>
+                <div class="h-1 w-12 bg-trad-gold rounded"></div>
+            </div>
+
+            <p class="text-lg sm:text-2xl text-trad-gold-light mb-8 font-medium drop-shadow-md" data-i18n="heroSubtitle">
+                सभी प्रकार के धार्मिक अनुष्ठान एवं पूजा पाठ के लिए संपर्क करें
+            </p>
+
+            <a href="tel:+358456965020" class="inline-flex items-center justify-center bg-trad-gold text-trad-maroon hover:bg-yellow-300 font-bold text-2xl sm:text-4xl py-3 px-8 rounded-full shadow-[0_0_20px_rgba(251,191,36,0.6)] transition duration-300 transform hover:scale-105 font-sans pulse-call border-4 border-yellow-200">
+                <i class="fas fa-phone-alt mr-4"></i> +358 45 6965020
+            </a>
+
+            <!-- Location & Language Switcher Bar -->
+            <div class="mt-8 flex flex-wrap justify-center items-center gap-3 sm:gap-6 w-full max-w-lg mx-auto">
+                <!-- Location Pill -->
+                <div class="text-sm sm:text-base text-white font-medium bg-black/60 px-5 py-2 rounded-full border border-trad-gold/50 backdrop-blur-sm flex items-center shadow-lg">
+                    <i class="fas fa-map-marker-alt text-trad-gold mr-2 animate-bounce"></i> 
+                    <span data-i18n="location">हेलसिंकी, फिनलैंड (Helsinki)</span>
+                </div>
+            </div>
+            
+        </div>
+    </header>
+
+    <!-- About Section (Accordion) -->
+    <section class="py-8 px-4 max-w-3xl mx-auto -mt-6 relative z-20">
+        <div class="bg-white rounded-2xl shadow-xl border border-trad-gold/50 overflow-hidden">
+            
+            <button onclick="toggleAbout()" class="w-full bg-orange-50 hover:bg-orange-100 px-6 py-4 flex justify-between items-center focus:outline-none transition-colors border-b border-trad-gold/30">
+                <h2 class="text-2xl font-bold text-trad-maroon flex items-center gap-3">
+                    <i class="fas fa-info-circle text-trad-orange"></i>
+                    <span data-i18n="aboutTitle">पंडित जी के बारे में</span>
+                </h2>
+                <i id="about-chevron" class="fas fa-chevron-down text-trad-orange text-xl transition-transform duration-300"></i>
+            </button>
+            
+            <div id="about-content" class="hidden px-6 py-6 text-gray-700 bg-white">
+                <div class="flex flex-col sm:flex-row items-center gap-6">
+                    <!-- Photo Placeholder -->
+                    <div class="w-32 h-32 rounded-full border-4 border-trad-gold overflow-hidden shadow-lg shrink-0">
+                        <!-- INSERT PANDIT JI PHOTO URL HERE -->
+                        <img src="https://placehold.co/150x150/800000/FFD700?text=Photo" alt="Pandit Ji Photo" class="w-full h-full object-cover">
+                    </div>
+                    
+                    <div class="flex flex-col gap-3 w-full">
+                        <p class="text-lg leading-relaxed text-center sm:text-left" data-i18n="aboutDesc">
+                            पंडित राम चंद्र भट्ट जी प्रामाणिक वैदिक अनुष्ठानों और पूजा-पाठ के एक प्रतिष्ठित विद्वान हैं।
+                        </p>
+                        <div class="bg-orange-50 p-3 rounded-lg border border-orange-100 flex items-start sm:items-center shadow-sm">
+                            <i class="fas fa-book-reader text-trad-orange text-xl mr-3 mt-1 sm:mt-0"></i>
+                            <div class="flex flex-col sm:flex-row sm:items-baseline gap-1">
+                                <span class="font-bold text-trad-maroon whitespace-nowrap" data-i18n="educationLabel">शिक्षा:</span> 
+                                <span class="text-lg" data-i18n="educationVal">श्री जयराम संस्कृत महाविद्यालय, ऋषिकेश</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-orange-50 p-3 rounded-lg border border-orange-100 flex items-start sm:items-center shadow-sm">
+                            <i class="fas fa-award text-trad-orange text-xl mr-3 mt-1 sm:mt-0"></i>
+                            <div class="flex flex-col sm:flex-row sm:items-baseline gap-1">
+                                <span class="font-bold text-trad-maroon whitespace-nowrap" data-i18n="expLabel">अनुभव:</span> 
+                                <span class="text-lg font-medium text-trad-red" data-i18n="expVal">15 सालों का विशाल अनुभव</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-10 px-4 max-w-6xl mx-auto">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl sm:text-4xl font-bold text-trad-maroon inline-block border-ornate px-8 py-3 bg-trad-cream shadow-sm" data-i18n="servicesTitle">
+                हमारी सेवाएँ
+            </h2>
+            <p class="mt-4 text-gray-600" data-i18n="servicesSub">विस्तृत जानकारी और पूजा सामग्री के लिए किसी भी सेवा पर क्लिक करें।</p>
+        </div>
+
+        <!-- Dynamic Services Grid -->
+        <div id="services-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+            <!-- Injected via JavaScript -->
+        </div>
+    </section>
+
+    <!-- Features Banner -->
+    <div class="bg-trad-maroon text-trad-gold py-8 px-4 border-y-4 border-trad-gold">
+        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div class="flex flex-col items-center justify-center gap-2">
+                <i class="fas fa-leaf text-3xl mb-2"></i>
+                <span class="text-base sm:text-lg font-bold" data-i18n="feat1">शास्त्र सम्मत पूजन विधि</span>
+            </div>
+            <div class="flex flex-col items-center justify-center gap-2">
+                <i class="fas fa-users text-3xl mb-2"></i>
+                <span class="text-base sm:text-lg font-bold" data-i18n="feat2">अनुभवी एवं विश्वसनीय सेवा</span>
+            </div>
+            <div class="flex flex-col items-center justify-center gap-2">
+                <i class="fas fa-clock text-3xl mb-2"></i>
+                <span class="text-base sm:text-lg font-bold" data-i18n="feat3">आपकी सुविधा के अनुसार</span>
+            </div>
+            <div class="flex flex-col items-center justify-center gap-2">
+                <i class="fas fa-vihara text-3xl mb-2"></i>
+                <span class="text-base sm:text-lg font-bold" data-i18n="feat4">घर, कार्यालय, मंदिर पर सेवा</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-trad-red text-trad-cream py-10 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-6" data-i18n="contactTitle">संपर्क करें</h2>
+            
+            <a href="tel:+358456965020" class="inline-block bg-trad-cream text-trad-red text-2xl font-bold py-3 px-8 rounded-full shadow-xl hover:bg-yellow-100 transition font-sans">
+                <i class="fas fa-phone-alt mr-2 text-trad-orange"></i> +358 45 6965020
+            </a>
+
+            <div class="mt-8 flex justify-center space-x-4 text-trad-gold text-2xl">
+                <i class="fas fa-om"></i>
+                <i class="fas fa-dharmachakra"></i>
+                <i class="fas fa-om"></i>
+            </div>
+            
+            <p class="mt-6 text-sm opacity-80">&copy; <span id="year"></span> Pandit Ji Ram Chandra Bhatt. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating UI Elements -->
+    
+    <!-- Sticky Mobile Call Button -->
+    <div class="fixed bottom-0 left-0 w-full p-3 z-40 md:hidden bg-white shadow-[0_-5px_15px_rgba(0,0,0,0.1)] border-t border-gray-200">
+        <a href="tel:+358456965020" class="flex items-center justify-center w-full bg-trad-gold text-trad-maroon font-bold text-xl py-3 rounded-lg shadow pulse-call font-sans">
+            <i class="fas fa-phone-alt mr-3"></i> <span data-i18n="callNow">अभी कॉल करें</span>
+        </a>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/358456965020" target="_blank" rel="noopener noreferrer" class="fixed bottom-24 md:bottom-8 right-4 md:right-6 z-50 bg-[#25D366] text-white w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center text-3xl sm:text-4xl shadow-[0_4px_15px_rgba(37,211,102,0.5)] hover:scale-110 transition-all duration-300">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Floating Language Toggle Button -->
+    <button onclick="toggleLanguage()" class="fixed top-20 sm:top-24 right-4 sm:right-6 z-50 group text-xs sm:text-sm bg-trad-maroon text-trad-gold border border-trad-gold font-bold px-2 py-1 sm:px-3 sm:py-1.5 rounded-full flex items-center shadow-[0_4px_15px_rgba(0,0,0,0.3)] hover:bg-trad-gold hover:text-trad-maroon transition-all duration-300 transform hover:scale-105">
+        <i class="fas fa-globe text-sm sm:text-base mr-1 sm:mr-1.5 group-hover:animate-spin"></i>
+        <span id="lang-btn-text" data-i18n="langBtn">English</span>
+    </button>
+
+    <!-- Modal for Service Details -->
+    <div id="service-modal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4 modal-backdrop opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl w-full max-w-lg shadow-2xl transform scale-95 transition-transform duration-300 overflow-hidden flex flex-col max-h-[90vh]">
+            
+            <!-- Modal Header -->
+            <div class="bg-trad-maroon text-trad-gold px-6 py-4 flex justify-between items-center relative border-b-4 border-trad-gold">
+                <h3 id="modal-title" class="text-2xl font-bold font-sans">Pooja Name</h3>
+                <button onclick="closeModal()" class="text-trad-gold hover:text-white transition text-3xl leading-none">&times;</button>
+            </div>
+            
+            <!-- Modal Body (Scrollable) -->
+            <div class="p-6 overflow-y-auto">
+                <p id="modal-desc" class="text-gray-700 text-lg mb-6 leading-relaxed border-l-4 border-trad-orange pl-3 bg-orange-50 py-2 rounded-r"></p>
+                
+                <h4 class="text-xl font-bold text-trad-maroon mb-3 border-b border-gray-200 pb-2 flex items-center">
+                    <i class="fas fa-list-ul mr-2 text-trad-orange"></i>
+                    <span data-i18n="samagriTitle">पूजा सामग्री (Pooja Items)</span>
+                </h4>
+                
+                <ul id="modal-samagri" class="list-disc pl-6 text-gray-700 space-y-1.5 marker:text-trad-orange">
+                    <!-- Injected via JS -->
+                </ul>
+                
+                <div class="mt-6 text-sm text-gray-500 italic bg-gray-50 p-3 rounded" data-i18n="samagriNote">
+                    * नोट: कुछ विशिष्ट सामग्री पूजा के प्रकार के अनुसार बदल सकती है। कृपया पंडित जी से संपर्क कर पुष्टि करें।
+                </div>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="px-6 py-4 bg-gray-50 border-t flex justify-end">
+                <button onclick="closeModal()" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-6 rounded-lg transition" data-i18n="closeBtn">बंद करें</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Logic & Data -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // State
+        let currentLang = 'hi';
+
+        // Translations Dictionary
+        const translations = {
+            hi: {
+                topLeft: "॥ जय भैरव देवता ॥",
+                topRight: "॥ जय माता दी ॥",
+                ganesh: "॥ श्री गणेशाय नमः ॥",
+                shloka: "वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।<br class='sm:hidden'> निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥",
+                titleTitle: "पंडित जी",
+                titleName: "राम चंद्र भट्ट",
+                heroSubtitle: "सभी प्रकार के धार्मिक अनुष्ठान एवं पूजा पाठ के लिए संपर्क करें",
+                location: "हेलसिंकी, फिनलैंड",
+                aboutTitle: "पंडित जी के बारे में",
+                aboutDesc: "पंडित राम चंद्र भट्ट जी प्रामाणिक वैदिक अनुष्ठानों और पूजा-पाठ के एक प्रतिष्ठित विद्वान हैं।",
+                educationLabel: "शिक्षा:",
+                educationVal: "श्री जयराम संस्कृत महाविद्यालय, ऋषिकेश",
+                expLabel: "अनुभव:",
+                expVal: "15 सालों का विशाल अनुभव",
+                servicesTitle: "हमारी सेवाएँ",
+                servicesSub: "विस्तृत जानकारी और पूजा सामग्री के लिए किसी भी सेवा पर क्लिक करें।",
+                feat1: "शास्त्र सम्मत पूजन विधि",
+                feat2: "अनुभवी एवं विश्वसनीय सेवा",
+                feat3: "आपकी सुविधा के अनुसार",
+                feat4: "घर, कार्यालय, मंदिर पर सेवा",
+                contactTitle: "संपर्क करें",
+                callNow: "अभी कॉल करें",
+                samagriTitle: "पूजा सामग्री (आवश्यक वस्तुएं)",
+                samagriNote: "* नोट: कुछ विशिष्ट सामग्री पूजा के प्रकार के अनुसार बदल सकती है। कृपया पंडित जी से संपर्क कर पुष्टि करें।",
+                closeBtn: "बंद करें",
+                langBtn: "English"
+            },
+            en: {
+                topLeft: "॥ Jai Bhairav Devta ॥",
+                topRight: "॥ Jai Mata Di ॥",
+                ganesh: "॥ Shree Ganeshay Namah ॥",
+                shloka: "Vakratunda Mahakaya Suryakoti Samaprabha.<br class='sm:hidden'> Nirvighnam Kuru Me Deva Sarvakaryeshu Sarvada॥",
+                titleTitle: "Pandit Ji",
+                titleName: "Ram Chandra Bhatt",
+                heroSubtitle: "Contact for all religious ceremonies, rituals, and poojas",
+                location: "Helsinki, Finland",
+                aboutTitle: "About Pandit Ji",
+                aboutDesc: "Pandit Ram Chandra Bhatt is a respected scholar of authentic Vedic rituals and religious ceremonies.",
+                educationLabel: "Education:",
+                educationVal: "Shri Jairam Sanskrit Mahavidyalaya, Rishikesh",
+                expLabel: "Experience:",
+                expVal: "15+ years of vast experience",
+                servicesTitle: "Our Services",
+                servicesSub: "Click on any service for details and required Pooja Samagri.",
+                feat1: "Authentic Vedic Rituals",
+                feat2: "Experienced & Reliable",
+                feat3: "At Your Convenience",
+                feat4: "Home, Office, Temple Service",
+                contactTitle: "Contact Us",
+                callNow: "Call Now",
+                samagriTitle: "Pooja Samagri (Required Items)",
+                samagriNote: "* Note: Specific items may vary depending on the pooja. Please confirm with Pandit Ji.",
+                closeBtn: "Close",
+                langBtn: "हिंदी"
+            }
+        };
+
+        // Complete Services Data (16 Items)
+        const servicesData = [
+            { id: 'grihapravesh', icon: 'fa-home', hi: { name: 'गृह प्रवेश पूजा', desc: 'नए घर में सुख-शांति के लिए शुभ अनुष्ठान।', samagri: ['हल्दी, कुमकुम, अक्षत', 'सुपारी, लौंग, इलायची', 'नारियल, कलश', 'आम के पत्ते', 'हवन सामग्री', 'फल, फूल, मिठाई'] }, en: { name: 'Griha Pravesh', desc: 'House-warming ceremony for peace and prosperity.', samagri: ['Turmeric, Kumkum, Rice', 'Betel nuts, Cloves', 'Coconut, Kalash', 'Mango leaves', 'Havan Samagri', 'Fruits, Flowers, Sweets'] } },
+            { id: 'satyanarayan', icon: 'fa-book-open', hi: { name: 'सत्यनारायण कथा', desc: 'परिवार में सुख-समृद्धि हेतु कथा।', samagri: ['सत्यनारायण भगवान का चित्र', 'रोली, मौली, जनेऊ', 'पंचामृत', 'पंजीरी', 'केले के पत्ते', 'तुलसी दल'] }, en: { name: 'Satyanarayan Katha', desc: 'Recitation for family happiness and well-being.', samagri: ['Satyanarayan Image', 'Roli, Mauli, Thread', 'Panchamrit', 'Panjiri (Prasad)', 'Banana leaves', 'Tulsi leaves'] } },
+            { id: 'rudrabhishek', icon: 'fa-om', hi: { name: 'रुद्राभिषेक', desc: 'भगवान शिव का पवित्र द्रव्यों से अभिषेक।', samagri: ['शिवलिंग', 'दूध, दही, घी, शहद', 'गंगाजल', 'बिल्व पत्र', 'भांग, भस्म', 'रुद्राक्ष'] }, en: { name: 'Rudrabhishek', desc: 'Sacred bath of Shiva Lingam.', samagri: ['Shiva Lingam', 'Milk, Curd, Ghee', 'Ganga water', 'Bilva leaves', 'Bhasma', 'Rudraksha'] } },
+            { id: 'lakshmi', icon: 'fa-coins', hi: { name: 'लक्ष्मी पूजा', desc: 'धन और व्यापार में वृद्धि के लिए विशेष पूजा।', samagri: ['गणेश-लक्ष्मी की मूर्ति', 'कमल का फूल', 'कौड़ी, गोमती चक्र', 'धनिया', 'लाल वस्त्र', 'पंचमेवा'] }, en: { name: 'Lakshmi Pooja', desc: 'Worship for wealth and business growth.', samagri: ['Ganesha-Lakshmi Idols', 'Lotus flowers', 'Cowries', 'Coriander', 'Red cloth', 'Dry fruits'] } },
+            { id: 'navgrah', icon: 'fa-sun', hi: { name: 'नवग्रह शांति पूजा', desc: 'नवग्रह दोष निवारण अनुष्ठान।', samagri: ['नवग्रह यंत्र', 'नवग्रह समिधा', 'काले-सफेद तिल', 'नवग्रह वस्त्र', 'हवन सामग्री', 'घी'] }, en: { name: 'Navgrah Shanti', desc: 'Ritual to pacify the nine planets.', samagri: ['Navgrah Yantra', '9 types of wood', 'Sesame seeds', '9 colors of cloth', 'Havan Samagri', 'Ghee'] } },
+            { id: 'matruka', icon: 'fa-om', hi: { name: 'मातृका / कुलदेवी पूजा', desc: 'कुल की देवी की कृपा प्राप्ति हेतु पूजा।', samagri: ['माता का चित्र/मूर्ति', 'सिंदूर, कुमकुम', 'लाल चुनरी', 'सोलह श्रृंगार', 'नारियल', 'मिठाई'] }, en: { name: 'Matruka/Kuldevi Pooja', desc: 'Worship of the family deity for blessings.', samagri: ['Goddess Image', 'Sindoor, Kumkum', 'Red Chunari', 'Makeup items', 'Coconut', 'Sweets'] } },
+            { id: 'vastu', icon: 'fa-compass', hi: { name: 'वास्तु शांति पूजा', desc: 'भवन के वास्तु दोषों के निवारण हेतु पूजा।', samagri: ['वास्तु यंत्र', 'नवग्रह लकड़ी', 'पंचगव्य', 'पीली सरसों', 'हवन कुंड', 'अक्षत'] }, en: { name: 'Vastu Shanti Pooja', desc: 'Ritual to correct architectural flaws (Vastu Dosha).', samagri: ['Vastu Yantra', 'Navgrah wood', 'Panchagavya', 'Yellow mustard', 'Havan Kund', 'Rice'] } },
+            { id: 'vivah', icon: 'fa-ring', hi: { name: 'विवाह संस्कार', desc: 'वैदिक विधि-विधान से विवाह संपन्न कराना।', samagri: ['मंडप सामग्री', 'हवन कुंड', 'वरमाला', 'मंगलसूत्र, सिंदूर', 'गठजोड़ कपड़ा', 'विवाह पूजन सामग्री'] }, en: { name: 'Vivah Sanskar', desc: 'Authentic Hindu marriage ceremony.', samagri: ['Mandap items', 'Havan Kund', 'Garlands', 'Mangalsutra, Sindoor', 'Gathbandhan cloth', 'Wedding pooja kit'] } },
+            { id: 'mundan', icon: 'fa-child', hi: { name: 'मुंडन संस्कार', desc: 'शिशु के प्रथम बाल उतारने का संस्कार।', samagri: ['चांदी/नया उस्तरा', 'हवन सामग्री', 'आटे का दीया', 'गंगाजल', 'हल्दी', 'नए वस्त्र'] }, en: { name: 'Mundan Sanskar', desc: 'First hair-cutting ceremony of a child.', samagri: ['Silver Razor', 'Havan items', 'Dough lamp', 'Ganga water', 'Turmeric', 'New clothes'] } },
+            { id: 'namkaran', icon: 'fa-pen-nib', hi: { name: 'नामकरण संस्कार', desc: 'नवजात शिशु का वैदिक नामकरण संस्कार।', samagri: ['पान के पत्ते', 'शहद, घी', 'चांदी की चम्मच', 'अक्षत थाली', 'हवन सामग्री', 'शिशु के वस्त्र'] }, en: { name: 'Namkaran Sanskar', desc: 'Naming ceremony for a newborn.', samagri: ['Betel leaves', 'Honey, Ghee', 'Silver spoon', 'Rice plate', 'Havan materials', 'Baby clothes'] } },
+            { id: 'janmadin', icon: 'fa-birthday-cake', hi: { name: 'जन्मदिन विशेष पूजा', desc: 'दीर्घायु और स्वस्थ जीवन के लिए जन्मदिवस पर पूजा।', samagri: ['इष्ट देव का चित्र', 'रोली, अक्षत', 'फल, फूल', 'मिठाई', 'दीपक, धूप', 'पंचामृत'] }, en: { name: 'Janmadin Pooja', desc: 'Birthday pooja for a long and healthy life.', samagri: ['Deity Image', 'Roli, Rice', 'Fruits, Flowers', 'Sweets', 'Lamp, Incense', 'Panchamrit'] } },
+            { id: 'pitru', icon: 'fa-praying-hands', hi: { name: 'पितृ तर्पण एवं श्राद्ध', desc: 'पूर्वजों की आत्मा की शांति के लिए श्राद्ध कर्म।', samagri: ['काले तिल', 'कुशा (पवित्र घास)', 'जौ', 'सफेद फूल', 'धोती-गमछा', 'पिंड दान सामग्री'] }, en: { name: 'Pitru Tarpan & Shradh', desc: 'Rituals for the peace of ancestors\' souls.', samagri: ['Black sesame', 'Kusha grass', 'Barley', 'White flowers', 'Dhoti', 'Pind Daan items'] } },
+            { id: 'havan', icon: 'fa-fire', hi: { name: 'हवन यज्ञ', desc: 'वातावरण शुद्धि और देवों की प्रसन्नता हेतु।', samagri: ['हवन कुंड', 'आम की समिधा', 'हवन सामग्री', 'शुद्ध घी', 'कपूर', 'सूखा नारियल'] }, en: { name: 'Havan Yagya', desc: 'Sacred fire ritual for purification.', samagri: ['Fire pit', 'Mango wood', 'Havan Samagri', 'Pure Ghee', 'Camphor', 'Dry coconut'] } },
+            { id: 'sankat', icon: 'fa-shield-alt', hi: { name: 'संकट निवारण पूजा', desc: 'कष्टों और बाधाओं को दूर करने हेतु विशेष अनुष्ठान।', samagri: ['हनुमान/भैरव जी का चित्र', 'सिंदूर, चमेली तेल', 'काले तिल', 'लाल फूल', 'नारियल', 'गुड़, चना'] }, en: { name: 'Sankat Nivaran Pooja', desc: 'Special rituals to remove life obstacles.', samagri: ['Deity Image', 'Sindoor, Oil', 'Black sesame', 'Red flowers', 'Coconut', 'Jaggery, Gram'] } },
+            { id: 'vahan', icon: 'fa-car', hi: { name: 'वाहन पूजा', desc: 'नए वाहन की सुरक्षा और शुभता हेतु पूजा।', samagri: ['नारियल', 'नींबू (4 पीस)', 'लाल धागा (मौली)', 'रोली, चावल', 'फूल माला', 'मिठाई'] }, en: { name: 'Vahan Pooja', desc: 'Vehicle blessing ceremony for safety.', samagri: ['Coconut', 'Lemons (4)', 'Red thread', 'Roli, Rice', 'Flower garland', 'Sweets'] } },
+            { id: 'anya', icon: 'fa-star', hi: { name: 'अन्य सभी धार्मिक अनुष्ठान', desc: 'सभी प्रकार के व्रत, त्योहार व अन्य संस्कार पूजा।', samagri: ['कृपया पंडित जी से संपर्क करें। पूजा के स्वरूप के अनुसार सामग्री की सूची आपको उपलब्ध करा दी जाएगी।'] }, en: { name: 'All Other Ceremonies', desc: 'All other Hindu fasting poojas, festivals, and life rituals.', samagri: ['Please contact Pandit Ji. A customized list of items will be provided based on the specific ceremony.'] } }
+        ];
+
+        // Functions
+        function toggleAbout() {
+            const content = document.getElementById('about-content');
+            const chevron = document.getElementById('about-chevron');
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                chevron.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                chevron.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        function renderServices() {
+            const grid = document.getElementById('services-grid');
+            grid.innerHTML = '';
+            
+            servicesData.forEach(srv => {
+                const data = srv[currentLang];
+                
+                const card = document.createElement('div');
+                card.className = "bg-white border-2 border-trad-gold/40 rounded-xl p-4 flex flex-col items-center text-center shadow hover:shadow-lg transition duration-300 cursor-pointer transform hover:-translate-y-1";
+                card.onclick = () => openModal(srv.id);
+                
+                card.innerHTML = `
+                    <div class="bg-orange-100 text-trad-orange rounded-full w-14 h-14 flex items-center justify-center text-2xl mb-3 shadow-inner">
+                        <i class="fas ${srv.icon}"></i>
+                    </div>
+                    <span class="text-base sm:text-lg font-semibold text-gray-800 ${currentLang === 'en' ? 'font-sans' : 'font-hindi'} leading-tight">${data.name}</span>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function openModal(serviceId) {
+            const srv = servicesData.find(s => s.id === serviceId);
+            if (!srv) return;
+
+            const data = srv[currentLang];
+            const isAnya = serviceId === 'anya'; 
+
+            document.getElementById('modal-title').textContent = data.name;
+            document.getElementById('modal-title').className = `text-2xl font-bold ${currentLang === 'en' ? 'font-sans' : 'font-hindi'}`;
+            
+            document.getElementById('modal-desc').textContent = data.desc;
+            document.getElementById('modal-desc').className = `text-gray-700 text-lg mb-6 leading-relaxed border-l-4 border-trad-orange pl-3 bg-orange-50 py-2 rounded-r ${currentLang === 'en' ? 'font-sans' : 'font-hindi'}`;
+
+            const ul = document.getElementById('modal-samagri');
+            ul.innerHTML = '';
+            ul.className = `list-disc pl-6 text-gray-700 space-y-1.5 marker:text-trad-orange ${currentLang === 'en' ? 'font-sans' : 'font-hindi'}`;
+            
+            if(isAnya){
+                 ul.classList.remove('list-disc'); 
+                 ul.classList.add('list-none', 'pl-0', 'italic', 'text-center', 'text-trad-maroon', 'bg-orange-50', 'p-4', 'rounded');
+            } else {
+                 ul.classList.add('list-disc');
+                 ul.classList.remove('list-none', 'pl-0', 'italic', 'text-center', 'text-trad-maroon', 'bg-orange-50', 'p-4', 'rounded');
+            }
+
+            data.samagri.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                ul.appendChild(li);
+            });
+
+            const modal = document.getElementById('service-modal');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.add('modal-active', 'opacity-100');
+                modal.querySelector('div').classList.remove('scale-95');
+                modal.querySelector('div').classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('service-modal');
+            modal.classList.remove('opacity-100');
+            modal.querySelector('div').classList.remove('scale-100');
+            modal.querySelector('div').classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.remove('modal-active');
+                modal.classList.add('hidden');
+            }, 300); 
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('service-modal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'hi' ? 'en' : 'hi';
+            updateStaticText();
+            renderServices();
+            
+            // Update Toggle Button Text
+            const btnSpan = document.getElementById('lang-btn-text');
+            btnSpan.textContent = translations[currentLang].langBtn;
+
+            if(currentLang === 'en'){
+                document.getElementById('app-body').classList.remove('font-hindi');
+                document.getElementById('app-body').classList.add('font-sans');
+            } else {
+                document.getElementById('app-body').classList.remove('font-sans');
+                document.getElementById('app-body').classList.add('font-hindi');
+            }
+        }
+
+        function updateStaticText() {
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.innerHTML = translations[currentLang][key]; 
+                }
+            });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            updateStaticText();
+            renderServices();
+        });
+
+    </script>
+</body>
+</html>
